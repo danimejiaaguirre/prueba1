@@ -21,7 +21,7 @@ class HorariosController < ApplicationController
     @horario = Horario.find(params[:id])
     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html show.html.erb
       format.json { render json: @horario }
       format.pdf do
         pdf = HorarioPdf.new(@horario, view_context)

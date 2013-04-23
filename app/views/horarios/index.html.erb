@@ -6,7 +6,7 @@
   <%= form_tag request.path, :method => 'get' do %>
     <%= content_tag :label do %>
       buscar aula:
-      <%= text_field_tag :search, params[:search] %>
+      <%= search_field_tag :search, params[:search], :placeholder => "maestro, materia, curso, aula" %>
       <%= submit_tag "Consultar", :aula => nil %>
     <% end %>
   <% end %>

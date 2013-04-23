@@ -6,7 +6,7 @@
   <%= form_tag request.path, :method => 'get' do %>
     <%= content_tag :label do %>
       Nombre Maestros:
-      <%= text_field_tag :search, params[:search] %>
+      <%= search_field_tag :search, params[:search], :placeholder => "nombre, direccion, email" %>
       <%= submit_tag "Consultar", :nombre => nil %>
     <% end %>
   <% end %>
