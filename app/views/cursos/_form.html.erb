@@ -1,0 +1,12 @@
+<%= simple_form_for(@curso, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  
+  <%= f.input :nombre %>
+  <%= f.input :ficha %>
+  
+    <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cursos_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba1</title>
+        <%= stylesheet_link_tag "application", :media => "all" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <br><br><br>	
+    <body>
+        <div class="navbar navbar-fixed-top">
+	        <div class="navbar navbar" >
+		        <div class="navbar-inner" >
+			        <div class="container" id="bar">
+			                       
+				        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </a>
+				                       
+				        <!-- Be sure to leave the brand out there if you want it shown -->
+				        <a id='tit' class="brand" href="#">SENA Centro de Formacion en Diseño, Confeccion y Moda</a>
+				                       
+				        <!-- Everything you want hidden at 940px or less, place within here -->
+				        <div class="nav-collapse collapse" id='menu'>
+					        <span class="dropdown-toggle"><%= link_to 'Horarios', horarios_path, :class => 'btn btn-default btn-small' %></span>  
+					        <span class="dropdown-toggle"><%= link_to 'Cursos', cursos_path, :class => 'btn btn-default btn-small' %></span>
+					        <span class="dropdown-toggle"><%= link_to 'Materias', materias_path, :class => 'btn btn-default btn-small' %></span>
+					        <span class="dropdown-toggle"><%= link_to 'Maestros', maestros_path, :class => 'btn btn-default btn-small' %></span>
+					        
+			            </div>
+		            </div>
+	            </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class='well'  >
+            <%= yield %>
+        </div>
+    </body>
+</html>

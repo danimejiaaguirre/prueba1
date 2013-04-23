@@ -1,0 +1,59 @@
+<%- model_class = Horario -%>
+<div class="page-header">
+  <h1 id="ho">Horarios</h1>
+  <hr>
+  <br>
+  <%= form_tag request.path, :method => 'get' do %>
+    <%= content_tag :label do %>
+      buscar aula:
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Consultar", :aula => nil %>
+    <% end %>
+  <% end %>
+
+</div>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+        <th><%= sortable 'id' %></th>
+        <th><%= sortable 'maestro' %></th>
+        <th><%= sortable 'materia' %></th>
+        <th><%= sortable 'curso' %></th>
+        <th><%= sortable 'dia' %></th>
+        <th><%= sortable 'hora' %></th>
+        <th><%= sortable 'aula' %></th>
+       
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @horarios %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td><%= link_to 'Nuevo Horario', new_horario_path, :remote => true, :class => 'btn btn-primary' %></td>
+    </tr>
+  </tfoot>
+</table>
+<div align="center">
+<%= will_paginate @horarios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %>
+</div>
+<p>
+Total Horarios : <%= @horarios.total_entries %>
+</p>
+<hr>
+Seleccione numero de registros por pagina:
+<br>
+<form id="myform" method='GET' action='horarios' >
+  <select name='limit' onchange='actualizar();'>
+    <option value = '2'></option>
+    <option value = '2'>2</option>
+    <option value = '4'>4</option>
+    <option value = '6'>6</option>
+  </select>
+</form>
+
+
+

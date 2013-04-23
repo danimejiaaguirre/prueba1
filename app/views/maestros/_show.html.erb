@@ -1,0 +1,17 @@
+<%- model_class = Maestro -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='maestro'>
+  <p><%= @maestro.id %></p>
+  <p><%= @maestro.nombre %></p>
+  <p><%= @maestro.curso_id %></p>
+  <p><%= @maestro.cedula %></p>
+  <p><%= @maestro.direccion %></p>
+  <p><%= @maestro.email %></p>
+  <p><%= @maestro.fch_nacimiento %></p>
+  <p><%= @maestro.materia_id %></p>
+  <p><%= @maestro.telefono %></p>
+</div>
+

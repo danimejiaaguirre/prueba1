@@ -1,0 +1,22 @@
+<tr id=<%= "maestro_#{maestro.id}" %>>
+  <td><%= link_to maestro.id, edit_maestro_path(maestro), :remote => true %></td>
+  <td><%= maestro.nombre %></td>
+  <td><%= maestro.curso_id %></td>
+  <td><%= maestro.cedula %></td>
+  <td><%= maestro.direccion %></td>
+  <td><%= maestro.email%></td>
+  <td><%= maestro.fch_nacimiento %></td>
+  <td><%= maestro.materia_id %></td>
+  <td><%= maestro.telefono %></td>
+  <td>
+    <%= link_to 'Mostrar', maestro_path(maestro), :remote => true, :class => 'btn btn-mini btn-warning' %>
+    <%= link_to 'Editar', edit_maestro_path(maestro), :remote => true,:class => 'btn btn-mini btn-success' %>
+    <%= link_to 'Eliminar', maestro, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>
+
+
+
+  

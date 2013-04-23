@@ -1,0 +1,14 @@
+<%- model_class = Estudiante -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='estudiante'>
+  <p><%= image_tag @estudiante.foto.url(:small) %></p>
+  <p>Nombre: <%= @estudiante.nombre %></p>
+  <p>curso: <%= @estudiante.curso_id %></p>
+  <p>cedula: <%= @estudiante.cedula %></p>
+  <p>direccion: <%= @estudiante.direccion %></p>
+  <p>email: <%= @estudiante.email %></p>
+  <p>fch_nacimiento: <%= @estudiante.fch_nacimiento %></p>
+</div>
